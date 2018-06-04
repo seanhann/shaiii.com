@@ -9,12 +9,10 @@ var app = require('../app');
 var debug = require('debug')('www:server');
 var https = require('https');
 var http = require('http');
-
 var options = {
-   key  : fs.readFileSync('/etc/ssl/private/domain.key'),
-   cert : fs.readFileSync('/etc/ssl/certs/domain.crt')
+   key  : fs.readFileSync('/etc/letsencrypt/live/shaiii.com/privkey.pem'),
+   cert : fs.readFileSync('/etc/letsencrypt/live/shaiii.com/fullchain.pem')
 };
-
 /**
  * Get port from environment and store in Express.
  */
