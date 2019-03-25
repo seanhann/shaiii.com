@@ -17,7 +17,7 @@ self.addEventListener('fetch', function(event) {
         // response may be used only once
         // we need to save clone to put one copy in cache
         // and serve second one
-      	if(event.request.method != "POST" && event.request.url.indexOf("https://shaiii.com:8080/") == -1){
+      	if(event.request.method != "POST" && event.request.url.indexOf("https://shaiii.com:8080/") == -1 && event.request.url.indexOf("http") === 0){
         	let responseClone = response.clone();
         	
         	caches.open('v1').then(function (cache) {
